@@ -35,11 +35,10 @@ test('function should count total cost taking discount', () => {
 
 test('function should delet item by id', () => {
 
-
-  
   const result = cart.delet(1001);
 
   expect(result).toEqual([
     {id: 1008, name: 'Meteora', author: 'Linkin Park', price: 900},
+    {id: 777, name: 'The Avengers', author: 'Marvel comics', price: 101, year: 2012, country: 'America', tagline: 'Avengers Assamble!', style: 'фантастика, боевик, приключения', duration:'137 мин/ 2:17'}
   ])
 })
