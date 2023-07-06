@@ -33,9 +33,9 @@ test('function should count total cost taking discount', () => {
   expect(result).toBe(2400.8)
 })
 
-test('function should delet item by id', () => {
+test('function should delete item by id', () => {
 
-  const result = cart.delet(1001);
+  const result = cart.deleteById(1001);
 
   expect(result).toEqual([
     {id: 1008, name: 'Meteora', author: 'Linkin Park', price: 900},

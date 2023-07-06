@@ -13,30 +13,22 @@ export default class Cart {
 
     totalCost(): number {
 
-        let totalPrice: number = 0;
-        for (let i = 0; i < this._items.length; i++) {
-            console.log(this._items[i])
-            totalPrice = totalPrice + this._items[i].price;
-        }
+        const totalPrice: number = this._items.reduce((acc, item) => {
+            acc += item.price;
+            return acc
+          }, 0)
+
         return totalPrice
     }
 
     totalDiscounCost(discount: number): number {
 
-        let totalPrice: number = 0;
-        
-        for (let i = 0; i < this._items.length; i++) {
-            console.log(this._items[i])
-            totalPrice = totalPrice + this._items[i].price;
-        }
-
-        const onePersent: number = totalPrice / 100;
+        const onePersent: number = this.totalCost() / 100;
         const disc: number = onePersent * discount;
-        return totalPrice - disc
+        return this.totalCost() - disc
     }
 
-    delet(id: number): Object {
-        const filtredCart: Buyable[] = this._items.filter(item => item.id != id)
-        return filtredCart
+    deleteById(id: number): Buyable[]  {
+        return this._items = this._items.filter(item => item.id !== id)
     }
 }

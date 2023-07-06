@@ -12,4 +12,7 @@ cart.add(new Movie(777, 'The Avengers', 'Marvel comics', 101, 2012, 'America', '
 
 console.log(cart.items);
 
-console.log(cart.delet(1001))
+console.log(cart.totalCost());
+console.log(cart.totalDiscounCost(20));
+
+console.log(cart.deleteById(1001))
